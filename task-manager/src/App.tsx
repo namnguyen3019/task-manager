@@ -5,7 +5,6 @@ import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
 import { Todo } from "./model";
-
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [completedTodos, setCompletedTodos] = useState<Todo[]>([]);
@@ -48,10 +47,10 @@ const App = () => {
     setCompletedTodos(complete);
   };
   return (
-    <Container maxWidth="sm">
+    <Container>
       <DragDropContext onDragEnd={onDragEndHandler}>
         <div style={{ alignItems: "center" }}>
-          <Typography variant="h3" align="center" gutterBottom>
+          <Typography variant="h3" align="center" gutterBottom marginTop={5}>
             Task Manager
           </Typography>
           <InputField todos={todos} setTodos={setTodos} />
